@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="ru">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover" />
+    <meta name="theme-color" content="#09090b" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
+    <meta name="description" content="Гаражный Магнат — автономный idle-кликер на 100 уровней. Работает без интернета." />
+    <script>
+      // Регистрация Service Worker — выполняется ПЕРВОЙ, до загрузки game.js.
+      // Браузеры разрешают SW только по https:// или на localhost.
+      (function () {
+        if (!('serviceWorker' in navigator)) return;
+        var h = location.hostname, ok = location.protocol === 'https:' || h === 'localhost' || h === '127.0.0.1';
+        if (!ok) return;
+        window.addEventListener('load', function () {
+          navigator.serviceWorker.register('./sw.js', { scope: './' }).then(function (reg) {
+            reg.addEventListener('updatefound', function () {
+              var nw = reg.installing;
+              nw && nw.addEventListener('statechange', function () {
+                if (nw.state === 'installed' && navigator.serviceWorker.controller) nw.postMessage('SKIP_WAITING');
+              });
+            });
+          }).catch(function () {});
+        });
+      })();
+    </script>
+    <link rel="manifest" href="./manifest.json" />
+    <link rel="icon" type="image/png" sizes="64x64" href="./img/favicon-64.png" />
+    <link rel="apple-touch-icon" href="./img/icon-192.png" />
+    <title>Гаражный Магнат — Кликер 100 уровней</title>
+    <script type="module" crossorigin src="./game.js"></script>
+    <link rel="stylesheet" crossorigin href="./style.css">
+  </head>
+  <body>
+    <div id="root"></div>
+  </body>
+</html>
