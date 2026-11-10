@@ -1,7 +1,7 @@
 {
-  "name": "Garage Tycoon — 100-Level Clicker",
-  "short_name": "Garage Tycoon",
-  "description": "An offline idle clicker: 100 levels from Uncle Vasya's garage to Singularity.",
+  "name": "Гаражный Магнат — Кликер 100 Уровней",
+  "short_name": "Гаражный Магнат",
+  "description": "Автономный idle-кликер: 100 уровней от гаража дяди Васи до Сингулярности.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
