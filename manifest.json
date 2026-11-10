@@ -1,8 +1,7 @@
 {
-  "name": "Гаражный Магнат — Кликер 100 уровней",
-  "short_name": "Гаражный Магнат",
-  "description": "Автономный idle-кликер: 100 уровней от гаража дяди Васи до Сингулярности. Работает без интернета.",
-  "lang": "ru",
+  "name": "Garage Tycoon — 100-Level Clicker",
+  "short_name": "Garage Tycoon",
+  "description": "An offline idle clicker: 100 levels from Uncle Vasya's garage to Singularity.",
   "start_url": "./index.html",
   "scope": "./",
   "display": "standalone",
@@ -10,8 +9,22 @@
   "background_color": "#09090b",
   "theme_color": "#09090b",
   "icons": [
-    { "src": "img/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
-    { "src": "img/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
-    { "src": "img/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+    {
+      "src": "./img/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./img/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "any maskable"
+    },
+    {
+      "src": "./img/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
   ]
 }
